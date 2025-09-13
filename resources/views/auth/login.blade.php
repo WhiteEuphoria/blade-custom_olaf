@@ -1,88 +1,35 @@
 @extends('layouts.app')
-@section('title', 'Вход')
+@section('title', 'Login')
 @section('content')
 
 <div class="wrapper">
-<main class="page">
-<div class="auth-page">
-<div class="auth">
-<div class="logo"><img alt="logo" src="{{ asset('personal-acc/img/logo.svg') }}"/></div>
-<form class="auth-form" method="POST">
-@csrf
-
-<div class="field">
-<input placeholder="E-mail" type="email"/>
+    <main class="page">
+        <div class="auth-page">
+            <div class="auth">
+                <div class="logo"><img src="{{ asset('personal-acc/img/logo.svg') }}" alt="logo"></div>
+                <form class="auth-form" method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="field">
+                        <input type="email" name="email" placeholder="E-mail" value="{{ old('email') }}" required>
+                        @error('email')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="field">
+                        <div class="field__wrapper">
+                            <input type="password" name="password" placeholder="Password" required>
+                            <button type="button" class="field__icon">
+                                <img src="{{ asset('personal-acc/img/icons/eye.svg') }}" alt="eye">
+                            </button>
+                        </div>
+                        @error('password')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <button class="btn" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </main>
 </div>
-<div class="field">
-<div class="field__wrapper">
-<input placeholder="Password" type="password"/>
-<button class="field__icon" type="button">
-<img alt="eye" src="{{ asset('personal-acc/img/icons/eye.svg') }}"/>
-</button>
-</div>
-</div>
-<button class="btn" type="submit">Login</button>
-</form>
-</div>
-</div>
-</main>
-</div>
-@push('scripts')
-<script>
-		const btnToggleCryptoBlock = document.querySelector('.btn-toggle-crypto-window')
-		const cryptoWindowInfo = document.querySelector('.type-crypto-window')
-		const cryptoForm = document.querySelector('.form-crypto')
-		if (btnToggleCryptoBlock && cryptoWindowInfo && cryptoForm) {
-
-			btnToggleCryptoBlock.addEventListener('click', () => {
-				cryptoForm.classList.toggle('hide')
-				cryptoWindowInfo.classList.toggle('show')
-			})
-		}
-	</script>
-<!-- Loader -->
-<script>
-		const loaders = document.querySelectorAll('.loading');
-
-		loaders.forEach(loader => {
-			const progressCircle = loader.querySelector('.progress');
-			const percentText = loader.querySelector('.loading__percent');
-			if (!progressCircle || !percentText) return;
-
-			const radius = Number(progressCircle.getAttribute('r')) || 54;
-			const circumference = 2 * Math.PI * radius;
-
-			// стартовые значения
-			progressCircle.style.strokeDasharray = circumference;
-			progressCircle.style.strokeDashoffset = circumference;
-			progressCircle.style.transition = 'stroke-dashoffset 0.6s ease';
-
-			// функция обновления
-			function updateCircle(percent) {
-				percent = Math.min(Math.max(percent, 0), 100);
-				const targetOffset = circumference - (percent / 100) * circumference;
-				progressCircle.style.strokeDashoffset = targetOffset;
-			}
-
-			// следим за изменениями текста в .loading__percent
-			const observer = new MutationObserver(() => {
-				const raw = (percentText.textContent || '0').replace(/[^\d]/g, '');
-				const newPercent = parseInt(raw, 10) || 0;
-				updateCircle(newPercent);
-			});
-
-			observer.observe(percentText, {
-				characterData: true,
-				childList: true,
-				subtree: true
-			});
-
-			// инициализация (если уже есть значение)
-			const initial = parseInt((percentText.textContent || '0').replace(/[^\d]/g, ''), 10) || 0;
-			updateCircle(initial);
-		});
-	</script>
-<!-- Loader -->
-@endpush
-
 @endsection
