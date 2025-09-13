@@ -1,17 +1,16 @@
-@extends('layouts.app')
-@section('title', 'Кабинет')
-@section('content')
+<?php $__env->startSection('title', 'Кабинет'); ?>
+<?php $__env->startSection('content'); ?>
 
 <div class="wrapper">
 <header class="header">
 <div class="container">
 <div class="header__inner">
-<a class="header__logo logo" href="#"><img alt="" src="{{ asset('personal-acc/img/logo.svg') }}"/></a>
+<a class="header__logo logo" href="#"><img alt="" src="<?php echo e(asset('personal-acc/img/logo.svg')); ?>"/></a>
 <div class="header__actions">
 <button class="btn btn--light btn-support" data-support-btn="" type="button">
 							Support
 							<span class="btn__icon">
-<img alt="support" src="{{ asset('personal-acc/img/icons/support.svg') }}"/>
+<img alt="support" src="<?php echo e(asset('personal-acc/img/icons/support.svg')); ?>"/>
 </span>
 </button>
 <div class="desktop">
@@ -20,7 +19,7 @@
 </div>
 <div class="mobile">
 <a class="btn" href="withdraw.html">Withdrawal <span class="btn__icon">
-<img alt="withdraw" src="{{ asset('personal-acc/img/icons/withdraw.svg') }}"/>
+<img alt="withdraw" src="<?php echo e(asset('personal-acc/img/icons/withdraw.svg')); ?>"/>
 </span></a>
 </div>
 </div>
@@ -59,7 +58,7 @@
 <div class="user-info__status user-info__status--verify">Verificated</div>
 </div>
 <div class="user-info__col">
-<div class="user-info__title" style="font-weight: 600;">Balance <img alt="wallet" src="{{ asset('personal-acc/img/icons/wallet.svg') }}"/></div>
+<div class="user-info__title" style="font-weight: 600;">Balance <img alt="wallet" src="<?php echo e(asset('personal-acc/img/icons/wallet.svg')); ?>"/></div>
 <div class="user-info__text-lg">50 000 €</div>
 </div>
 </div>
@@ -412,7 +411,7 @@
 </div>
 <div class="aside">
 <div class="transaction desktop">
-<div class="transaction-title">Transactions <img alt="transactions" src="{{ asset('personal-acc/img/icons/copy.svg') }}"/>
+<div class="transaction-title">Transactions <img alt="transactions" src="<?php echo e(asset('personal-acc/img/icons/copy.svg')); ?>"/>
 </div>
 <div class="transaction-list">
 <div class="transaction-item transaction-item--success">
@@ -426,7 +425,7 @@
 <div class="transaction-item__bottom">
 <div class="transaction-item__block">
 <div class="transaction-item__num">1234 ... 3231</div>
-<span><img alt="arrow" src="{{ asset('personal-acc/img/icons/arrow.svg') }}"/></span>
+<span><img alt="arrow" src="<?php echo e(asset('personal-acc/img/icons/arrow.svg')); ?>"/></span>
 <div class="transaction-item__text-md">1Fssj...qwet2</div>
 </div>
 <div class="transaction-item__sum">1500 €</div>
@@ -443,7 +442,7 @@
 <div class="transaction-item__bottom">
 <div class="transaction-item__block">
 <div class="transaction-item__num">1234 ... 3231</div>
-<span><img alt="arrow" src="{{ asset('personal-acc/img/icons/arrow.svg') }}"/></span>
+<span><img alt="arrow" src="<?php echo e(asset('personal-acc/img/icons/arrow.svg')); ?>"/></span>
 <div class="transaction-item__text-md">1Fssj...qwet2</div>
 </div>
 <div class="transaction-item__sum">1500 €</div>
@@ -460,7 +459,7 @@
 <div class="transaction-item__bottom">
 <div class="transaction-item__block">
 <div class="transaction-item__num">1234 ... 3231</div>
-<span><img alt="arrow" src="{{ asset('personal-acc/img/icons/arrow.svg') }}"/></span>
+<span><img alt="arrow" src="<?php echo e(asset('personal-acc/img/icons/arrow.svg')); ?>"/></span>
 <div class="transaction-item__text-md">1Fssj...qwet2</div>
 </div>
 <div class="transaction-item__sum">1500 €</div>
@@ -477,7 +476,7 @@
 <div class="transaction-item__bottom">
 <div class="transaction-item__block">
 <div class="transaction-item__num">1234 ... 3231</div>
-<span><img alt="arrow" src="{{ asset('personal-acc/img/icons/arrow.svg') }}"/></span>
+<span><img alt="arrow" src="<?php echo e(asset('personal-acc/img/icons/arrow.svg')); ?>"/></span>
 <div class="transaction-item__text-md">1Fssj...qwet2</div>
 </div>
 <div class="transaction-item__sum">1500 €</div>
@@ -494,7 +493,7 @@
 <div class="transaction-item__bottom">
 <div class="transaction-item__block">
 <div class="transaction-item__num">1234 ... 3231</div>
-<span><img alt="arrow" src="{{ asset('personal-acc/img/icons/arrow.svg') }}"/></span>
+<span><img alt="arrow" src="<?php echo e(asset('personal-acc/img/icons/arrow.svg')); ?>"/></span>
 <div class="transaction-item__text-md">1Fssj...qwet2</div>
 </div>
 <div class="transaction-item__sum">1500 €</div>
@@ -511,7 +510,7 @@
 <div class="transaction-item__bottom">
 <div class="transaction-item__block">
 <div class="transaction-item__num">1234 ... 3231</div>
-<span><img alt="arrow" src="{{ asset('personal-acc/img/icons/arrow.svg') }}"/></span>
+<span><img alt="arrow" src="<?php echo e(asset('personal-acc/img/icons/arrow.svg')); ?>"/></span>
 <div class="transaction-item__text-md">1Fssj...qwet2</div>
 </div>
 <div class="transaction-item__sum">1500 €</div>
@@ -528,7 +527,7 @@
 <div class="transaction-item__bottom">
 <div class="transaction-item__block">
 <div class="transaction-item__num">1234 ... 3231</div>
-<span><img alt="arrow" src="{{ asset('personal-acc/img/icons/arrow.svg') }}"/></span>
+<span><img alt="arrow" src="<?php echo e(asset('personal-acc/img/icons/arrow.svg')); ?>"/></span>
 <div class="transaction-item__text-md">1Fssj...qwet2</div>
 </div>
 <div class="transaction-item__sum">1500 €</div>
@@ -545,7 +544,7 @@
 <div class="transaction-item__bottom">
 <div class="transaction-item__block">
 <div class="transaction-item__num">1234 ... 3231</div>
-<span><img alt="arrow" src="{{ asset('personal-acc/img/icons/arrow.svg') }}"/></span>
+<span><img alt="arrow" src="<?php echo e(asset('personal-acc/img/icons/arrow.svg')); ?>"/></span>
 <div class="transaction-item__text-md">1Fssj...qwet2</div>
 </div>
 <div class="transaction-item__sum">1500 €</div>
@@ -554,7 +553,7 @@
 </div>
 <button class="btn btn--secondary" data-da=".grid,1023.98,0" data-popup="#violation" type="button">
 								Report a violation
-								<span class="btn__icon"><img alt="roupor" src="{{ asset('personal-acc/img/icons/loudspeaker.svg') }}"/></span>
+								<span class="btn__icon"><img alt="roupor" src="<?php echo e(asset('personal-acc/img/icons/loudspeaker.svg')); ?>"/></span>
 </button>
 </div>
 <div class="user-table">
@@ -714,7 +713,7 @@
 <div class="chat" data-support-window="">
 <div class="chat__head">
 <div class="chat__item">
-<img alt="person" src="{{ asset('personal-acc/img/icons/person-support.svg') }}"/>
+<img alt="person" src="<?php echo e(asset('personal-acc/img/icons/person-support.svg')); ?>"/>
 <span>Support Service</span>
 </div>
 <button class="chat__close" type="button">
@@ -734,10 +733,10 @@
 <div class="field">
 <input class="chat__input" placeholder="Write here..." type="text"/>
 </div>
-<button class="chat__submit" type="submit"><img alt="send" src="{{ asset('personal-acc/img/icons/send.svg') }}"/></button>
+<button class="chat__submit" type="submit"><img alt="send" src="<?php echo e(asset('personal-acc/img/icons/send.svg')); ?>"/></button>
 <label class="chat__file">
 <input hidden="" type="file"/>
-<span><img alt="attach" src="{{ asset('personal-acc/img/icons/attach.svg') }}"/></span>
+<span><img alt="attach" src="<?php echo e(asset('personal-acc/img/icons/attach.svg')); ?>"/></span>
 </label>
 </div>
 </div>
@@ -755,14 +754,14 @@
 </button>
 <div class="modal-content">
 <div class="modal-content__top">
-<div class="logo"><img alt="logo" src="{{ asset('personal-acc/img/logo.svg') }}"/></div>
+<div class="logo"><img alt="logo" src="<?php echo e(asset('personal-acc/img/logo.svg')); ?>"/></div>
 <div class="modal-content__text">
 <p>Describe your complaint</p>
 </div>
 </div>
 <div class="modal-content__body">
 <form action="#">
-@csrf
+<?php echo csrf_field(); ?>
 
 <div class="field">
 <textarea placeholder="Write here..."></textarea>
@@ -784,7 +783,7 @@
 <div class="create-account">
 <div class="create-account__title">Создание нового счёта</div>
 <form action="#" class="create-account__form">
-@csrf
+<?php echo csrf_field(); ?>
 
 <div class="field"><input placeholder="Название счёта (Account name)" type="text"/></div>
 <div class="field"><input placeholder="Номер счёта (Account number)" type="text"/></div>
@@ -814,7 +813,7 @@
 </button>
 <div class="modal-content">
 <div class="modal-content__top">
-<div class="logo"><img alt="logo" src="{{ asset('personal-acc/img/logo.svg') }}"/></div>
+<div class="logo"><img alt="logo" src="<?php echo e(asset('personal-acc/img/logo.svg')); ?>"/></div>
 <div class="modal-content__text">
 <p>Choose a withdrawal method</p>
 </div>
@@ -863,7 +862,7 @@
 <div class="tabs__content" data-tabs-body="">
 <div class="tabs__body">
 <form action="#">
-@csrf
+<?php echo csrf_field(); ?>
 
 <div class="field has-error">
 <input placeholder="1111 2222 3333 4444" type="number"/>
@@ -882,7 +881,7 @@
 </div>
 <div class="tabs__body">
 <form action="#">
-@csrf
+<?php echo csrf_field(); ?>
 
 <div class="field">
 <input placeholder="Enter IBAN" type="text"/>
@@ -919,11 +918,11 @@
 <button class="btn-toggle-crypto-window" style="padding: 0.5rem; border-radius: 0.25rem; border: 1px solid #63616C; font-size: 0.625rem; margin-bottom: 0.8rem; margin-inline: auto;" type="button">click
 										show crypto type window</button>
 <div class="type-crypto-window">
-<img alt="attention" src="{{ asset('personal-acc/img/icons/attention.svg') }}"/>
+<img alt="attention" src="<?php echo e(asset('personal-acc/img/icons/attention.svg')); ?>"/>
 <p>At first you need to change the type of account to "Crypto" type</p>
 </div>
 <form action="#" class="form-crypto">
-@csrf
+<?php echo csrf_field(); ?>
 
 <div class="field">
 <input placeholder="Deposit address" type="text"/>
@@ -955,7 +954,7 @@
 </div>
 </div>
 </div>
-<script src="{{ asset('personal-acc/js/app.min.js') }}"></script>
+<script src="<?php echo e(asset('personal-acc/js/app.min.js')); ?>"></script>
 <script>
 		const btnToggleCryptoBlock = document.querySelector('.btn-toggle-crypto-window')
 		const cryptoWindowInfo = document.querySelector('.type-crypto-window')
@@ -1012,4 +1011,5 @@
 	</script>
 <!-- Loader -->
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /home/runner/work/blade-custom_olaf/blade-custom_olaf/resources/views/user/dashboard.blade.php ENDPATH**/ ?>

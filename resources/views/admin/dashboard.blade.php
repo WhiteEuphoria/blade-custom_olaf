@@ -175,7 +175,7 @@
 </button>
 <div class="modal-content">
 <div class="modal-content__top">
-<div class="logo"><img alt="logo" src="&lt;?= asset('personal-acc/img/logo.svg') ?&gt;"/></div>
+<div class="logo"><img alt="logo" src="{{ asset('personal-acc/img/logo.svg') }}"/></div>
 <div class="modal-content__text">
 <p>Describe your complaint</p>
 </div>
@@ -234,7 +234,7 @@
 </button>
 <div class="modal-content">
 <div class="modal-content__top">
-<div class="logo"><img alt="logo" src="&lt;?= asset('personal-acc/img/logo.svg') ?&gt;"/></div>
+<div class="logo"><img alt="logo" src="{{ asset('personal-acc/img/logo.svg') }}"/></div>
 <div class="modal-content__text">
 <p>Choose a withdrawal method</p>
 </div>
@@ -339,7 +339,7 @@
 <button class="btn-toggle-crypto-window" style="padding: 0.5rem; border-radius: 0.25rem; border: 1px solid #63616C; font-size: 0.625rem; margin-bottom: 0.8rem; margin-inline: auto;" type="button">click
 										show crypto type window</button>
 <div class="type-crypto-window">
-<img alt="attention" src="&lt;?= asset('personal-acc/img/icons/attention.svg') ?&gt;"/>
+<img alt="attention" src="{{ asset('personal-acc/img/icons/attention.svg') }}"/>
 <p>At first you need to change the type of account to "Crypto" type</p>
 </div>
 <form action="#" class="form-crypto">
@@ -375,7 +375,7 @@
 </div>
 </div>
 </div>
-<script src="&lt;?= asset('personal-acc/js/app.min.js') ?&gt;"></script>
+<script src="{{ asset('personal-acc/js/app.min.js') }}"></script>
 <script>
 		const btnToggleCryptoBlock = document.querySelector('.btn-toggle-crypto-window')
 		const cryptoWindowInfo = document.querySelector('.type-crypto-window')

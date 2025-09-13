@@ -6,7 +6,7 @@
 <main class="page">
 <div class="auth-page auth-page--accent">
 <div class="auth">
-<div class="logo"><img alt="logo" src="&lt;?= asset('personal-acc/img/logo.svg') ?&gt;"/></div>
+<div class="logo"><img alt="logo" src="{{ asset('personal-acc/img/logo.svg') }}"/></div>
 <form class="auth-form" method="POST">
 @csrf
 
@@ -17,7 +17,7 @@
 <div class="field__wrapper">
 <input placeholder="Пароль" type="password"/>
 <button class="field__icon" type="button">
-<img alt="eye" src="&lt;?= asset('personal-acc/img/icons/eye.svg') ?&gt;"/>
+<img alt="eye" src="{{ asset('personal-acc/img/icons/eye.svg') }}"/>
 </button>
 </div>
 </div>
@@ -27,7 +27,7 @@
 </div>
 </main>
 </div>
-<script src="&lt;?= asset('personal-acc/js/app.min.js') ?&gt;"></script>
+<script src="{{ asset('personal-acc/js/app.min.js') }}"></script>
 <script>
 		const btnToggleCryptoBlock = document.querySelector('.btn-toggle-crypto-window')
 		const cryptoWindowInfo = document.querySelector('.type-crypto-window')

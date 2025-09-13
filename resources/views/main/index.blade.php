@@ -12,15 +12,15 @@
 </div>
 <h2>Cтраницы:</h2>
 <ol class="rootpage__list">
-<li><a href="login.html" target="_blank">Логин</a></li>
-<li><a href="register.html" target="_blank">Регистрация</a></li>
-<li><a href="enter.html" target="_blank">Прикрепите ваши документы для проверки</a></li>
-<li><a href="verify.html" target="_blank">Верификация</a></li>
-<li><a href="user.html" target="_blank">Личный кабинет</a></li>
-<li><a href="violation.html" target="_blank">Сообщить о наружении(моб)</a></li>
-<li><a href="withdraw.html" target="_blank">Вывод(моб)</a></li>
-<li><a href="login-admin.html" target="_blank">Вход (Админка)</a></li>
-<li><a href="admin.html" target="_blank">Админка</a></li>
+<li><a href="{{ route('login') }}" target="_blank">Логин</a></li>
+<li><a href="{{ route('register') }}" target="_blank">Регистрация</a></li>
+<li><a href="{{ route('enter') }}" target="_blank">Прикрепите ваши документы для проверки</a></li>
+<li><a href="{{ route('verification.notice') }}" target="_blank">Верификация</a></li>
+<li><a href="{{ route('user.dashboard') }}" target="_blank">Личный кабинет</a></li>
+<li><a href="{{ route('user.violation') }}" target="_blank">Сообщить о наружении(моб)</a></li>
+<li><a href="{{ route('user.withdraw') }}" target="_blank">Вывод(моб)</a></li>
+<li><a href="{{ route('admin.login') }}" target="_blank">Вход (Админка)</a></li>
+<li><a href="{{ route('admin.dashboard') }}" target="_blank">Админка</a></li>
 </ol>
 <!-- <h2>Страницы в разработке:</h2>
     <ol class="rootpage__list">

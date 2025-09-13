@@ -1,38 +1,32 @@
-@extends('layouts.app')
-@section('title', 'Подтверждение')
-@section('content')
+<?php $__env->startSection('title', 'Вход'); ?>
+<?php $__env->startSection('content'); ?>
 
 <div class="wrapper">
 <main class="page">
 <div class="auth-page">
 <div class="auth">
-<div class="logo"><img alt="logo" src="{{ asset('personal-acc/img/logo.svg') }}"/></div>
-<div class="loading">
-<div class="loading__circle">
-<svg viewbox="0 0 120 120">
-<defs>
-<lineargradient id="gradient" x1="0" x2="1" y1="1" y2="0">
-<stop offset="0%" stop-color="#0B69B7"></stop>
-<stop offset="100%" stop-color="#052E51"></stop>
-</lineargradient>
-</defs>
-<circle class="bg" cx="60" cy="60" r="54"></circle>
-<circle class="progress" cx="60" cy="60" r="54" stroke-dasharray="339.2920065877" stroke-dashoffset="339.2920065877"></circle>
-<!-- <circle class="progress" cx="60" cy="60" r="54" /> -->
-</svg>
-<span class="loading__percent">56%</span>
+<div class="logo"><img alt="logo" src="<?php echo e(asset('personal-acc/img/logo.svg')); ?>"/></div>
+<form class="auth-form" method="POST">
+<?php echo csrf_field(); ?>
+
+<div class="field">
+<input placeholder="E-mail" type="email"/>
+</div>
+<div class="field">
+<div class="field__wrapper">
+<input placeholder="Password" type="password"/>
+<button class="field__icon" type="button">
+<img alt="eye" src="<?php echo e(asset('personal-acc/img/icons/eye.svg')); ?>"/>
+</button>
 </div>
 </div>
-<div class="verify-text">
-<p>The data verification procedure is underway. <br/>
-							It may take from 10 minutes to 3 hours. <br/>
-							Please wait.</p>
-</div>
+<button class="btn" type="submit">Login</button>
+</form>
 </div>
 </div>
 </main>
 </div>
-<script src="{{ asset('personal-acc/js/app.min.js') }}"></script>
+<?php $__env->startPush('scripts'); ?>
 <script>
 		const btnToggleCryptoBlock = document.querySelector('.btn-toggle-crypto-window')
 		const cryptoWindowInfo = document.querySelector('.type-crypto-window')
@@ -88,5 +82,7 @@
 		});
 	</script>
 <!-- Loader -->
+<?php $__env->stopPush(); ?>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /home/runner/work/blade-custom_olaf/blade-custom_olaf/resources/views/auth/login.blade.php ENDPATH**/ ?>

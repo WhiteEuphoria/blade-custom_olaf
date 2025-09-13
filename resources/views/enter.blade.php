@@ -6,7 +6,7 @@
 <main class="page">
 <div class="auth-page">
 <div class="auth">
-<div class="logo"><img alt="logo" src="&lt;?= asset('personal-acc/img/logo.svg') ?&gt;"/></div>
+<div class="logo"><img alt="logo" src="{{ asset('personal-acc/img/logo.svg') }}"/></div>
 <form class="enter-block">
 @csrf
 
@@ -14,7 +14,7 @@
 <div class="enter-block__file">
 <label class="file-btn">
 <input hidden="" type="file"/>
-<span class="file-btn__icon"><img alt="download" src="&lt;?= asset('personal-acc/img/icons/download.svg') ?&gt;"/></span>
+<span class="file-btn__icon"><img alt="download" src="{{ asset('personal-acc/img/icons/download.svg') }}"/></span>
 <span>Upload file</span>
 </label>
 </div>
@@ -39,7 +39,7 @@
 </div>
 </main>
 </div>
-<script src="&lt;?= asset('personal-acc/js/app.min.js') ?&gt;"></script>
+<script src="{{ asset('personal-acc/js/app.min.js') }}"></script>
 <script>
 		const btnToggleCryptoBlock = document.querySelector('.btn-toggle-crypto-window')
 		const cryptoWindowInfo = document.querySelector('.type-crypto-window')
