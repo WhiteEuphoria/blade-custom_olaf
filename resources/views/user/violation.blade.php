@@ -1,33 +1,62 @@
 @extends('layouts.app')
-@section('title', 'Нарушения')
+@section('title', 'Report Violation')
 @section('content')
 
 <div class="wrapper">
-<header class="header">
-<div class="container">
-<div class="header__inner">
-<a class="header__logo logo" href="#"><img alt="" src="{{ asset('personal-acc/img/logo.svg') }}"/></a>
-<div class="header__actions">
-<button class="btn" data-popup="#withdraw-modal" type="button"><span>Withdrawal <span class="desktop">of
-									funds</span></span>
-<span class="btn__icon mobile">
-<img alt="withdraw" src="{{ asset('personal-acc/img/icons/withdraw.svg') }}"/>
-</span>
-</button>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a class="header__logo logo" href="{{ route('user.dashboard') }}">
+                    <img src="{{ asset('personal-acc/img/logo.svg') }}" alt="">
+                </a>
+                <div class="header__actions">
+                    <button class="btn" data-popup="#withdraw-modal" type="button">
+                        <span>Withdrawal <span class="desktop">of funds</span></span>
+                        <span class="btn__icon mobile">
+                            <img src="{{ asset('personal-acc/img/icons/withdraw.svg') }}" alt="withdraw">
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="page">
+        <div class="container">
+            <div class="grid">
+                <div class="violation">
+                    <div class="modal-content">
+                        <div class="modal-content__top">
+                            <div class="modal-content__text">
+                                <p>Describe your complaint</p>
+                            </div>
+                        </div>
+                        <div class="modal-content__body">
+                            <form action="{{ route('user.violation.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="field">
+                                    <textarea name="complaint" placeholder="Write here...">{{ old('complaint') }}</textarea>
+                                    @error('complaint')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <button type="submit" class="btn">Send</button>
+                                <label class="modal-content__file">
+                                    <input type="file" name="attachment" hidden accept=".png,.jpg,.jpeg,.pdf">
+                                    <span>Attach the file</span>
+                                </label>
+                                @error('attachment')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </div>
-</div>
-</div>
-</header>
-<main class="page">
-<div class="container">
-<div class="grid">
-<div class="violation">
-<div class="modal-content">
-<div class="modal-content__top">
-<div class="modal-content__text">
-<p>Describe your complaint</p>
-</div>
-</div>
+
+@endsection
 <div class="modal-content__body">
 <form action="#">
 @csrf
