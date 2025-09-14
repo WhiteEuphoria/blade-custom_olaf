@@ -1,0 +1,88 @@
+<?php $__env->startSection('title', 'Вход'); ?>
+<?php $__env->startSection('content'); ?>
+
+<div class="wrapper">
+<main class="page">
+<div class="auth-page">
+<div class="auth">
+<div class="logo"><img alt="logo" src="<?php echo e(asset('personal-acc/img/logo.svg')); ?>"/></div>
+<form class="auth-form" method="POST">
+<?php echo csrf_field(); ?>
+
+<div class="field">
+<input placeholder="E-mail" type="email"/>
+</div>
+<div class="field">
+<div class="field__wrapper">
+<input placeholder="Password" type="password"/>
+<button class="field__icon" type="button">
+<img alt="eye" src="<?php echo e(asset('personal-acc/img/icons/eye.svg')); ?>"/>
+</button>
+</div>
+</div>
+<button class="btn" type="submit">Login</button>
+</form>
+</div>
+</div>
+</main>
+</div>
+<?php $__env->startPush('scripts'); ?>
+<script>
+		const btnToggleCryptoBlock = document.querySelector('.btn-toggle-crypto-window')
+		const cryptoWindowInfo = document.querySelector('.type-crypto-window')
+		const cryptoForm = document.querySelector('.form-crypto')
+		if (btnToggleCryptoBlock && cryptoWindowInfo && cryptoForm) {
+
+			btnToggleCryptoBlock.addEventListener('click', () => {
+				cryptoForm.classList.toggle('hide')
+				cryptoWindowInfo.classList.toggle('show')
+			})
+		}
+	</script>
+<!-- Loader -->
+<script>
+		const loaders = document.querySelectorAll('.loading');
+
+		loaders.forEach(loader => {
+			const progressCircle = loader.querySelector('.progress');
+			const percentText = loader.querySelector('.loading__percent');
+			if (!progressCircle || !percentText) return;
+
+			const radius = Number(progressCircle.getAttribute('r')) || 54;
+			const circumference = 2 * Math.PI * radius;
+
+			// стартовые значения
+			progressCircle.style.strokeDasharray = circumference;
+			progressCircle.style.strokeDashoffset = circumference;
+			progressCircle.style.transition = 'stroke-dashoffset 0.6s ease';
+
+			// функция обновления
+			function updateCircle(percent) {
+				percent = Math.min(Math.max(percent, 0), 100);
+				const targetOffset = circumference - (percent / 100) * circumference;
+				progressCircle.style.strokeDashoffset = targetOffset;
+			}
+
+			// следим за изменениями текста в .loading__percent
+			const observer = new MutationObserver(() => {
+				const raw = (percentText.textContent || '0').replace(/[^\d]/g, '');
+				const newPercent = parseInt(raw, 10) || 0;
+				updateCircle(newPercent);
+			});
+
+			observer.observe(percentText, {
+				characterData: true,
+				childList: true,
+				subtree: true
+			});
+
+			// инициализация (если уже есть значение)
+			const initial = parseInt((percentText.textContent || '0').replace(/[^\d]/g, ''), 10) || 0;
+			updateCircle(initial);
+		});
+	</script>
+<!-- Loader -->
+<?php $__env->stopPush(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /home/runner/work/blade-custom_olaf/blade-custom_olaf/resources/views/auth/login.blade.php ENDPATH**/ ?>

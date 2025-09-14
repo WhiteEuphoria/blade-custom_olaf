@@ -1,33 +1,62 @@
 @extends('layouts.app')
-@section('title', 'Нарушения')
+@section('title', 'Report Violation')
 @section('content')
 
 <div class="wrapper">
-<header class="header">
-<div class="container">
-<div class="header__inner">
-<a class="header__logo logo" href="#"><img alt="" src="&lt;?= asset('personal-acc/img/logo.svg') ?&gt;"/></a>
-<div class="header__actions">
-<button class="btn" data-popup="#withdraw-modal" type="button"><span>Withdrawal <span class="desktop">of
-									funds</span></span>
-<span class="btn__icon mobile">
-<img alt="withdraw" src="&lt;?= asset('personal-acc/img/icons/withdraw.svg') ?&gt;"/>
-</span>
-</button>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a class="header__logo logo" href="{{ route('user.dashboard') }}">
+                    <img src="{{ asset('personal-acc/img/logo.svg') }}" alt="">
+                </a>
+                <div class="header__actions">
+                    <button class="btn" data-popup="#withdraw-modal" type="button">
+                        <span>Withdrawal <span class="desktop">of funds</span></span>
+                        <span class="btn__icon mobile">
+                            <img src="{{ asset('personal-acc/img/icons/withdraw.svg') }}" alt="withdraw">
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="page">
+        <div class="container">
+            <div class="grid">
+                <div class="violation">
+                    <div class="modal-content">
+                        <div class="modal-content__top">
+                            <div class="modal-content__text">
+                                <p>Describe your complaint</p>
+                            </div>
+                        </div>
+                        <div class="modal-content__body">
+                            <form action="{{ route('user.violation.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="field">
+                                    <textarea name="complaint" placeholder="Write here...">{{ old('complaint') }}</textarea>
+                                    @error('complaint')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <button type="submit" class="btn">Send</button>
+                                <label class="modal-content__file">
+                                    <input type="file" name="attachment" hidden accept=".png,.jpg,.jpeg,.pdf">
+                                    <span>Attach the file</span>
+                                </label>
+                                @error('attachment')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </div>
-</div>
-</div>
-</header>
-<main class="page">
-<div class="container">
-<div class="grid">
-<div class="violation">
-<div class="modal-content">
-<div class="modal-content__top">
-<div class="modal-content__text">
-<p>Describe your complaint</p>
-</div>
-</div>
+
+@endsection
 <div class="modal-content__body">
 <form action="#">
 @csrf
@@ -58,7 +87,7 @@
 </button>
 <div class="modal-content">
 <div class="modal-content__top">
-<div class="logo"><img alt="logo" src="&lt;?= asset('personal-acc/img/logo.svg') ?&gt;"/></div>
+<div class="logo"><img alt="logo" src="{{ asset('personal-acc/img/logo.svg') }}"/></div>
 <div class="modal-content__text">
 <p>Describe your complaint</p>
 </div>
@@ -117,7 +146,7 @@
 </button>
 <div class="modal-content">
 <div class="modal-content__top">
-<div class="logo"><img alt="logo" src="&lt;?= asset('personal-acc/img/logo.svg') ?&gt;"/></div>
+<div class="logo"><img alt="logo" src="{{ asset('personal-acc/img/logo.svg') }}"/></div>
 <div class="modal-content__text">
 <p>Choose a withdrawal method</p>
 </div>
@@ -222,7 +251,7 @@
 <button class="btn-toggle-crypto-window" style="padding: 0.5rem; border-radius: 0.25rem; border: 1px solid #63616C; font-size: 0.625rem; margin-bottom: 0.8rem; margin-inline: auto;" type="button">click
 										show crypto type window</button>
 <div class="type-crypto-window">
-<img alt="attention" src="&lt;?= asset('personal-acc/img/icons/attention.svg') ?&gt;"/>
+<img alt="attention" src="{{ asset('personal-acc/img/icons/attention.svg') }}"/>
 <p>At first you need to change the type of account to "Crypto" type</p>
 </div>
 <form action="#" class="form-crypto">
@@ -258,7 +287,7 @@
 </div>
 </div>
 </div>
-<script src="&lt;?= asset('personal-acc/js/app.min.js') ?&gt;"></script>
+<script src="{{ asset('personal-acc/js/app.min.js') }}"></script>
 <script>
 		const btnToggleCryptoBlock = document.querySelector('.btn-toggle-crypto-window')
 		const cryptoWindowInfo = document.querySelector('.type-crypto-window')
